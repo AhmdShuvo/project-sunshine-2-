@@ -8,7 +8,7 @@ const Home = () => {
   const [places,setplaces]=useState([])
 
   useEffect(()=>{
-fetch("https://pacific-falls-94383.herokuapp.com/places").then(res=>res.json()).then(data=>{
+fetch("http://localhost:9000/places").then(res=>res.json()).then(data=>{
 
 setplaces(data.slice(0,6))
 
@@ -20,7 +20,7 @@ setplaces(data.slice(0,6))
           <Attraction></Attraction>
           <section className="container my-5">
 
-<h3 className="my-4">places to visit </h3>
+<h3 className="  my-4">Featured Places For You </h3>
 
 <Row xs={1} md={2} className="g-4">
     {

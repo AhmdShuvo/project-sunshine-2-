@@ -4,15 +4,9 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
-  const {user,UserSignOUt,setUser}=useAuth();
+  const {user,LogOUt,setUser}=useAuth();
 
-  const handleLogOUt=()=>{
-        UserSignOUt().then(result=>{
-
-          setUser({})
-
-        }).catch(error=>{console.log(error);})
-  }
+  
 
     return (
         <header>
@@ -26,21 +20,23 @@ const Header = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <NavLink className="navbar-brand text-light  " to="home">Home</NavLink>
+        <NavLink className="navbar-brand text-light  " to="/">Home</NavLink>
         <NavLink className="navbar-brand text-light" to="places">places</NavLink>
         <NavLink className="navbar-brand text-light" to="events">Events</NavLink>
         
        
         {user.email?<NavLink className="navbar-brand text-light" to={`/order/${user.email}`}>WhiteList</NavLink>:<h1></h1>}
         {user.email? <NavLink className="navbar-brand  text-light" to="/delete">Manage</NavLink>:<h1></h1>}
-    <NavLink className="navbar-brand  text-light" to="/upload">upload</NavLink>
-       { !user.email?<NavLink className="navbar-brand text-light" to="Login">Log In</NavLink>:<a 
-        onClick={handleLogOUt}
-       className="navbar-brand text-light" to="signUp">Log Out</a>}
-       <NavLink className="navbar-brand text-light" to="/about">About US</NavLink>
+        <NavLink className="navbar-brand text-light" to="/about">About US</NavLink>
+       {user.email && <NavLink className="navbar-brand  text-light" to="/upload">upload</NavLink>}
+       { !user.email?<NavLink className="navbar-brand text-light" to="Login">Log In</NavLink>:<Link 
+        onClick={LogOUt}
+       className="navbar-brand text-light" to="signUp">Log Out</Link>}
+      
       </Nav>
-      {user.email?<div><h4>  {user.displayName} </h4>
-      </div>:<h4></h4>}
+      {user.email && <div><h4 className="text-light">  {user.displayName} </h4>
+      </div>}
+   
       <Form className="d-flex">
         <FormControl
           type="search"

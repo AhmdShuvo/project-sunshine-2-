@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from 'react-bootstrap';
 import {  useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import Loader from '../Loader/Loader';
@@ -82,7 +81,7 @@ const Details = () => {
     return (
         <>
 
-<section className="body">
+<section className="body d-lg-flex ">
 <div className="containers">
         <div className="card">
           <div className="image">
@@ -99,7 +98,12 @@ const Details = () => {
       </div>
        <form onSubmit={handleConfirm} className="my-4 mx-5">
  <div>
- <input onChange={getaddress} className="form-control" type="text" placeholder="Type Your Address" required/> <br />
+ 
+  <h7 className="text-light">User Name </h7><br />
+ <input  className="form-control w-100 " type="text" disabled placeholder={user.displayName} required/> <br />
+ <h7 className="text-light">User Email </h7><br />
+ <input  className="form-control w-100 " type="text" disabled placeholder={user.email} required/> <br />
+ <input onChange={getaddress} className="form-control w-100 " type="text" placeholder="Type Your Address" required/> <br />
  <input onChange={getNumber} className="form-control" type="number" placeholder="Phone Number" required/>
  </div>
   <center>

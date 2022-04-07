@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import Loader from '../Loader/Loader';
 import Orders from './Orders';
@@ -19,8 +20,8 @@ const ManageDelete = () => {
         return <Loader></Loader>
     }
     return (
-        <div>
-            <h1>manage delete</h1>
+        <Container>
+            <h1>Manage Orders</h1>
             <div>
                 {
                     services.map(service=><Orders
@@ -36,7 +37,7 @@ const ManageDelete = () => {
 
             </div>
                 
-        </div>
+        </Container>
     );
 };
 

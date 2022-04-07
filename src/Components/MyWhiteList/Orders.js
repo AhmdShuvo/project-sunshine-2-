@@ -1,18 +1,7 @@
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
 
 const Orders = ({order}) => {
-    
-               
-
-    const [services,setServices]=useState([])
-        
-
-    const {name,Country,company,cost,picture,email,phone,status,_id}=order.whitelist;
-    
-
-
-
+    const {name,Country,company,cost,picture,email,phone,status}=order.whitelist;
     const handleDelete=(id)=>{
 
        const agree=window.confirm("Are You Sure You Want to Delete this ?")
@@ -22,20 +11,12 @@ const Orders = ({order}) => {
             headers: { "content-type" :'application/json'}
         }).then( async res=>res.json()).then(async data=>{
             console.log(data);
+            alert("order Deleted")
         });
-        
-
-       
-
        }
-
-       alert("order Deleted")
-
-       window.location.href="/home"
+       window.location.href="/"
      
   }
-
-
     return (
         <div className=" container my-5 border border-info p-3 d-lg-flex align-items-center">
            
@@ -53,7 +34,7 @@ const Orders = ({order}) => {
           <h5>Contact Phone: {phone}</h5>
           
           </center>
-           {status?<h5>status : {order.status}</h5>:<h3></h3>}
+           {status&&<h5>status : {order.status}</h5>}
 
            <div>
                <button onClick={()=>handleDelete(order._id)} className="btn-danger text-light p-3 border rounded-3">Delete Purhase </button>

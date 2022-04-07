@@ -45,24 +45,19 @@ if(!service.whitelist){
 
 
        <Container>
-            <Card>
+            <Card className="mt-3">
              <h1>User Name  : {service.Name} </h1>
-        <Card.Img variant="top" src={picture} />
+        <Card.Img variant="top" src={picture} height="300px" />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
            
           </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-        <button onClick={()=>handleDelete(service._id)} className="btn-danger p-3 text-light border rounded-3 m-3">Delete</button>
+          <button onClick={()=>handleDelete(service._id)} className="btn-danger p-3 text-light border rounded-3 m-3">Delete</button>
        <button onClick={handleUpdate} className="btn-warning p-3 text-light m-3 border rounded-3">Activate</button>
-        </Card.Footer>
+        </Card.Body>
       </Card>
        </Container>
-
-
-        // </div>
     );
 };
 

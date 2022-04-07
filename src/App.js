@@ -17,6 +17,7 @@ import Details from './Components/Details/Details';
 import ManageDelete from './Components/ManageDelete/ManageDelete';
 import WhiteList from './Components/MyWhiteList/WhiteList';
 import Upload from './Components/Upload/Upload';
+import Abut from './Components/About/Abut';
 
    
 
@@ -30,6 +31,7 @@ function App() {
     <Route path="login" element={<Login />} />
     <Route path="signUp" element={<SignUp />} />
     <Route path="delete" element={<ManageDelete />} />
+    <Route path="about" element={<Abut/>} />
     <Route path="upload" element={<Upload/>} />
     <Route path="order/:email" element={<WhiteList />} />
   

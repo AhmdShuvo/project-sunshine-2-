@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Place = ({place}) => {
     
-      const {name,Country,about,company,cost,picture,_id}=place;
-      const history=useNavigate()
+      const {name,Country,about,company,cost,picture,_id,setIsLoadng}=place;
+      
       const url=`/places/${_id}`
   
   
@@ -27,7 +27,7 @@ const Place = ({place}) => {
   
                 <h5>A Tour By : {company}</h5>
                 <h4>Cost :$ {cost}</h4>
-               <Link to={url}> <button  className="btn-warning p-2 text-light border rounded-3 fs-4 "> Add to whiteList   </button></Link>
+               <Link to={url}> <button onClick={()=>setIsLoadng(false)}  className="btn-warning p-2 text-light border rounded-3 fs-4 "> Add to whiteList   </button></Link>
   
             </div>
          

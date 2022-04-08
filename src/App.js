@@ -18,6 +18,7 @@ import ManageDelete from './Components/ManageDelete/ManageDelete';
 import WhiteList from './Components/MyWhiteList/WhiteList';
 import Upload from './Components/Upload/Upload';
 import About from './Components/About/About';
+import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 
    
 
@@ -36,7 +37,17 @@ function App() {
     <Route path="order/:email" element={<WhiteList />} />
   
     <Route path="places" element={<Places />} />
-    <Route path="places/:placeid" element={<Details />} />
+
+    <Route
+            path='places/:placeid'
+            element={
+              <PrivateRoute>
+                {' '}
+                <Details />
+              </PrivateRoute>
+            }
+          ></Route>
+    {/* <Route path="places/:placeid" element={<Details />} /> */}
     </Routes>
     <Footer></Footer>
     </BrowserRouter>

@@ -17,9 +17,6 @@ initializeFirebase();
 const useFirebase = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoadng] = useState(true);
-  
-  
-
 
   const [user, setUser] = useState({});
   const auth = getAuth();
@@ -80,7 +77,7 @@ const useFirebase = () => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
- 
+
 
   // Observer ///
   useEffect(() => {
@@ -88,7 +85,7 @@ const useFirebase = () => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
-      
+
         setUser(user);
         setIsLoadng(false);
         // ...
@@ -96,7 +93,7 @@ const useFirebase = () => {
         setUser({});
         // User is signed out
         // ...
-       
+
       }
     });
     return () => unSubscribe;
@@ -114,7 +111,7 @@ const useFirebase = () => {
     isLoading,
     setIsLoadng,
     GoogleLogin,
- 
+
   };
 };
 

@@ -4,34 +4,34 @@ import Place from '../Home/Place';
 
 const Places = () => {
 
-    const [places,setplaces]=useState([])
+    const [places, setplaces] = useState([])
 
 
-    useEffect(()=>{
+    useEffect(() => {
 
-        fetch("http://localhost:9000/places").then(res=>res.json()).then(data=>{
+        fetch("http://localhost:9000/places").then(res => res.json()).then(data => {
             setplaces(data)
         })
 
-    },[])
+    }, [])
     return (
         <>
-        <section className="container my-5">
+            <section className="container my-5">
 
-            <h3 className="my-4">places to visit </h3>
+                <h3 className="my-4">places to visit </h3>
 
-            <Row xs={1} md={3} className="g-4">
-                {
+                <Row xs={1} md={3} className="g-4">
+                    {
 
-                    places.map(place=><Place
-                    key={place._id}
-                    place={place}
-                    ></Place>)
-                }
+                        places.map(place => <Place
+                            key={place._id}
+                            place={place}
+                        ></Place>)
+                    }
 
-            </Row>
-        </section>
-            
+                </Row>
+            </section>
+
         </>
     );
 };

@@ -5,17 +5,17 @@ import Orders from './Orders';
 
 const WhiteList = () => {
 
-    const {email}=useParams()
-    const [myOrders,setorders]=useState([])
-   
+    const { email } = useParams()
+    const [myOrders, setorders] = useState([])
 
-    useEffect(()=>{
-        fetch(`http://localhost:9000/orders/${email}`).then(res=>res.json()).then(data=>{
 
-    setorders(data)
+    useEffect(() => {
+        fetch(`http://localhost:9000/orders/${email}`).then(res => res.json()).then(data => {
+
+            setorders(data)
         })
 
-    },[])
+    }, [email])
 
     return (
         <div className="container my-5">
@@ -23,10 +23,10 @@ const WhiteList = () => {
 
             {
 
-                myOrders.map(order=><Orders
-                
-                key={order._id}
-                order={order}
+                myOrders.map(order => <Orders
+
+                    key={order._id}
+                    order={order}
                 ></Orders>)
             }
 

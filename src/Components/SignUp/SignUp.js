@@ -10,7 +10,7 @@ const SignUp = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const [logInData, setData] = useState({})
-  const url = location.state?.from.pathname || '/services';
+  const url = location.state?.from.pathname || 'places';
 
 
   const handleChange = e => {
@@ -36,7 +36,7 @@ const SignUp = () => {
 
 
     alert("user Created ")
-    navigate(url)
+   
     e.preventDefault()
   }
   return (

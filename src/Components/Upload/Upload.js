@@ -52,7 +52,7 @@ const Upload = () => {
     const handleUpload = e => {
 
         const data = { name: `${name}`, picture: `${photo}`, company: `${company}`, cost: `${cost}`, email: `${email}`, phone: `${phone}`, Country: `${Country}`, about: `${about}` }
-        fetch("http://localhost:9000/places", {
+        fetch("https://enigmatic-gorge-80884.herokuapp.com/places", {
 
             method: "POST", headers: { "content-type": 'application/json' },
             body: JSON.stringify(data)

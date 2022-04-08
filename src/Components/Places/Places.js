@@ -9,7 +9,7 @@ const Places = () => {
 
     useEffect(() => {
 
-        fetch("http://localhost:9000/places").then(res => res.json()).then(data => {
+        fetch("https://enigmatic-gorge-80884.herokuapp.com/places").then(res => res.json()).then(data => {
             setplaces(data)
         })
 

@@ -9,7 +9,7 @@ const ManageDelete = () => {
     const [services, setservices] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:9000/orders`).then(res => res.json()).then(data => {
+        fetch(`https://enigmatic-gorge-80884.herokuapp.com/orders`).then(res => res.json()).then(data => {
 
             setservices(data)
         })

@@ -28,7 +28,7 @@ const Header = () => {
               {user.email && <NavLink className="navbar-brand  text-light" to="/upload">upload</NavLink>}
               {!user.email ? <NavLink className="navbar-brand text-light" to="Login">Log In</NavLink> : <Link
                 onClick={LogOUt}
-                className="navbar-brand text-light" to="signUp">Log Out</Link>}
+                className="navbar-brand text-light" to="login">Log Out</Link>}
 
             </Nav>
             {user.email && <div><h4 className="text-light">  {user.displayName} </h4>

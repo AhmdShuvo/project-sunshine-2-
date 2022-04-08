@@ -19,7 +19,7 @@ const Details = () => {
 
   useEffect(() => {
 
-    fetch('http://localhost:9000/places').then(res => res.json()).then(data => {
+    fetch('https://enigmatic-gorge-80884.herokuapp.com/places').then(res => res.json()).then(data => {
 
       const match = data.find(plc => plc._id == placeid)
       setPlace(match);
@@ -56,7 +56,7 @@ const Details = () => {
 
       userdata.whitelist = order
 
-      fetch('http://localhost:9000/orders', {
+      fetch('https://enigmatic-gorge-80884.herokuapp.com/orders', {
         method: 'POST',
         headers: { "content-type": 'application/json' },
         body: JSON.stringify(userdata)

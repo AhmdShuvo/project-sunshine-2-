@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Abut = () => {
+const About = () => {
     return (
         <div className="container my-5 bg-dark text-light p-3 border rounded-3">
              <center> <h1>About Our Website </h1> </center>
@@ -8,4 +8,4 @@ const Abut = () => {
     );
 };
 
-export default Abut;
+export default About;

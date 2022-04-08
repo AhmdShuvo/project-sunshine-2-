@@ -4,13 +4,13 @@ import "./Footer.css"
 
 const Footer = () => {
     return (
-        <footer class="footer-distributed">
+        <footer className="footer-distributed">
  
-        <div class="footer-left">
+        <div className="footer-left">
         
         <h3>Tourist<span>Spots</span></h3>
         
-        <p class="footer-links">
+        <p className="footer-links">
         <a href="#">Home</a>
         ·
         <a href="#">Blog</a>
@@ -24,41 +24,41 @@ const Footer = () => {
         <a href="#">Contact</a>
         </p>
         
-        <p class="footer-company-name">webdevtrick &copy; 2019</p>
+        <p className="footer-company-name">webdevtrick &copy; 2019</p>
         </div>
         
-        <div class="footer-center">
+        <div className="footer-center">
         
         <div>
-        <i class="fa fa-map-marker"></i>
+        <i className="fa fa-map-marker"></i>
         <p><span>21 Revolution Street</span> Delhi, India</p>
         </div>
         
         <div>
-        <i class="fa fa-phone"></i>
+        <i className="fa fa-phone"></i>
         <p>+1 555 123456</p>
         </div>
         
         <div>
-        <i class="fa fa-envelope"></i>
+        <i className="fa fa-envelope"></i>
         <p><a href="mailto:support@company.com">contact@toursitspot.net</a></p>
         </div>
         
         </div>
         
-        <div class="footer-right">
+        <div className="footer-right">
         
-        <p class="footer-company-about">
+        <p className="footer-company-about">
         <span>About the company</span>
        Tourist Spots is a company that helps tourists across the world to provide a save journey
         </p>
         
-        <div class="footer-icons">
+        <div className="footer-icons">
         
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-github"></i></a>
+        <a href="#"><i className="fa fa-facebook"></i></a>
+        <a href="#"><i className="fa fa-twitter"></i></a>
+        <a href="#"><i className="fa fa-linkedin"></i></a>
+        <a href="#"><i className="fa fa-github"></i></a>
         
         </div>
         

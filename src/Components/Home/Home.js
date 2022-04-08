@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import Contact from '../Contact/Contact';
 import Attraction from './Attraction/Attraction';
 import Banner from './Banner/Banner';
 import Place from './Place';
@@ -33,6 +34,7 @@ setplaces(data.slice(0,6))
 
 </Row>
 </section>
+<Contact></Contact>
         </>
     );
 };

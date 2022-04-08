@@ -6,37 +6,38 @@ import Orders from './Orders';
 
 const ManageDelete = () => {
 
-    const {user}=useAuth()
-    const [services,setservices]=useState([])
+    const { user } = useAuth()
+    const [services, setservices] = useState([])
 
-    useEffect(()=>{
-        fetch(`http://localhost:9000/orders`).then(res=>res.json()).then(data=>{
+    useEffect(() => {
+        fetch(`http://localhost:9000/orders`).then(res => res.json()).then(data => {
 
-       setservices(data)
+            setservices(data)
         })
-    },[])
+    }, [])
 
-    if(!services){
+    if (!services) {
         return <Loader></Loader>
     }
     return (
         <Container>
             <h1>Manage Orders</h1>
-            <div>
-                {
+            
+             <section style={{border: '1px solid black'}}>
+             {
                     services.map(service=><Orders
                     key={service._id}
                     service={service}
                     ></Orders>)
-
- 
-
-
-                }
-
-
-            </div>
+            
                 
+          } 
+           </section>
+              
+        
+
+
+          
         </Container>
     );
 };

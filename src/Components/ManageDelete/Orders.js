@@ -1,14 +1,15 @@
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
+import useAuth from '../../Hooks/useAuth';
 
 const Orderss = ({service}) => {
 
-
+const {user}=useAuth()
 if(!service.whitelist){
     return 
 }
     const {name,picture,}=service.whitelist
-
+  
 
     const handleUpdate=e=>{ 
 
@@ -45,18 +46,35 @@ if(!service.whitelist){
 
 
        <Container>
-            <Card className="mt-3">
+
+         <div className="d-flex justify-content-evenly align-items-center m-3">
+          <div>
+          <img src={picture} alt="" />
+          <h3>Client:- {user.email}</h3>
+          </div>
+           <h3>{name}</h3>
+           <h3>{service.status}</h3>
+          
+           <button onClick={()=>handleDelete(service._id)} className="btn-danger p-3 text-light border rounded-3 m-3">Delete</button>
+      {service.status!=="active"&&  <button onClick={handleUpdate} className="btn-warning p-3 text-light m-3 border rounded-3">Activate</button>}
+            
+         </div>
+         <hr style={{border:"1px solid black",padding:"3px"}} />
+        
+            {/* <Card className="mt-5">
              <h1>User Name  : {service.Name} </h1>
-        <Card.Img variant="top" src={picture} height="300px" />
+        <Card.Img variant="top" src={picture} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
            
           </Card.Text>
-          <button onClick={()=>handleDelete(service._id)} className="btn-danger p-3 text-light border rounded-3 m-3">Delete</button>
-       <button onClick={handleUpdate} className="btn-warning p-3 text-light m-3 border rounded-3">Activate</button>
         </Card.Body>
-      </Card>
+        <Card.Footer>
+        <button onClick={()=>handleDelete(service._id)} className="btn-danger p-3 text-light border rounded-3 m-3">Delete</button>
+       <button onClick={handleUpdate} className="btn-warning p-3 text-light m-3 border rounded-3">Activate</button>
+        </Card.Footer>
+      </Card> */}
        </Container>
     );
 };

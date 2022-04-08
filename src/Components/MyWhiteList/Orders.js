@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Orders = ({order}) => {
+  
     const {name,Country,company,cost,picture,email,phone,status}=order.whitelist;
+
     const handleDelete=(id)=>{
 
        const agree=window.confirm("Are You Sure You Want to Delete this ?")
@@ -10,7 +12,7 @@ const Orders = ({order}) => {
             method:'DELETE',
             headers: { "content-type" :'application/json'}
         }).then( async res=>res.json()).then(async data=>{
-            console.log(data);
+            
             alert("order Deleted")
         });
        }

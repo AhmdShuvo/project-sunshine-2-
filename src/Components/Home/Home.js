@@ -4,12 +4,13 @@ import Contact from '../Contact/Contact';
 import Attraction from './Attraction/Attraction';
 import Banner from './Banner/Banner';
 import Place from './Place';
+import { MessengerChat } from "react-messenger-chat-plugin";
 
 const Home = () => {
   const [places, setplaces] = useState([])
 
   useEffect(() => {
-    fetch("https://enigmatic-gorge-80884.herokuapp.com/places").then(res => res.json()).then(data => {
+    fetch("https://tourist-spot-server.vercel.app/places").then(res => res.json()).then(data => {
 
       setplaces(data.slice(0, 6))
 
@@ -35,6 +36,8 @@ const Home = () => {
         </Row>
       </section>
       <Contact></Contact>
+      
+   
     </>
   );
 };

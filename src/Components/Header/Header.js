@@ -23,6 +23,8 @@ const Header = () => {
               <NavLink className="navbar-brand text-light  " to="/">Home</NavLink>
               <NavLink className="navbar-brand text-light" to="places">places</NavLink>
               {user.email && <NavLink className="navbar-brand text-light" to={`/order/${user.email}`}>WhiteList</NavLink> }
+              {user.email && <NavLink className="navbar-brand text-light" to={'createpost'}>Create Post</NavLink> }
+              {user.email && <NavLink className="navbar-brand text-light" to={'blogs'}>Blogs</NavLink> }
               {user.email && <NavLink className="navbar-brand  text-light" to="/delete">Manage</NavLink>}
               <NavLink className="navbar-brand text-light" to="/about">About US</NavLink>
               {user.email && <NavLink className="navbar-brand  text-light" to="/upload">upload</NavLink>}

@@ -52,7 +52,7 @@ const Upload = () => {
     const handleUpload = e => {
 
         const data = { name: `${name}`, picture: `${photo}`, company: `${company}`, cost: `${cost}`, email: `${email}`, phone: `${phone}`, Country: `${Country}`, about: `${about}` }
-        fetch("https://enigmatic-gorge-80884.herokuapp.com/places", {
+        fetch("https://tourist-spot-server.vercel.app/places", {
 
             method: "POST", headers: { "content-type": 'application/json' },
             body: JSON.stringify(data)

@@ -8,7 +8,7 @@ const Orders = ({ order }) => {
 
         const agree = window.confirm("Are You Sure You Want to Delete this ?")
         if (agree) {
-            fetch(`https://enigmatic-gorge-80884.herokuapp.com/order/${id}`, {
+            fetch(`https://tourist-spot-server.vercel.app/order/${id}`, {
                 method: 'DELETE',
                 headers: { "content-type": 'application/json' }
             }).then(async res => res.json()).then(async data => {

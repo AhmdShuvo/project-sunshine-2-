@@ -10,7 +10,7 @@ const WhiteList = () => {
 
 
     useEffect(() => {
-        fetch(`https://enigmatic-gorge-80884.herokuapp.com/orders/${email}`).then(res => res.json()).then(data => {
+        fetch(`https://tourist-spot-server.vercel.app/orders/${email}`).then(res => res.json()).then(data => {
 
             setorders(data)
         })

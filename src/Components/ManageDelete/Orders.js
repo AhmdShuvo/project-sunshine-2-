@@ -13,7 +13,7 @@ const Orderss = ({ service }) => {
 
   const handleUpdate = e => {
 
-    fetch(`https://enigmatic-gorge-80884.herokuapp.com/order/${service._id}`, {
+    fetch(`https://tourist-spot-server.vercel.app/order/${service._id}`, {
       method: "PUT",
       headers: { "content-type": 'application/json' },
 
@@ -30,7 +30,7 @@ const Orderss = ({ service }) => {
 
     const agree = window.confirm("Are You Sure want to delete this ? ")
     if (agree) {
-      fetch(`https://enigmatic-gorge-80884.herokuapp.com/order/${id}`, {
+      fetch(`https://tourist-spot-server.vercel.app/order/${id}`, {
         method: 'DELETE',
         headers: { "content-type": 'application/json' }
       }).then(res => res.json()).then(data => {

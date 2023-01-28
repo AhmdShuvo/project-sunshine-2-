@@ -19,7 +19,7 @@ const Details = () => {
 
   useEffect(() => {
 
-    fetch('https://enigmatic-gorge-80884.herokuapp.com/places').then(res => res.json()).then(data => {
+    fetch('https://tourist-spot-server.vercel.app/places').then(res => res.json()).then(data => {
 
       const match = data.find(plc => plc._id == placeid)
       setPlace(match);
@@ -56,7 +56,7 @@ const Details = () => {
 
       userdata.whitelist = order
 
-      fetch('https://enigmatic-gorge-80884.herokuapp.com/orders', {
+      fetch('https://tourist-spot-server.vercel.app/orders', {
         method: 'POST',
         headers: { "content-type": 'application/json' },
         body: JSON.stringify(userdata)

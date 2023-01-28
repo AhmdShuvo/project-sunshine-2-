@@ -9,14 +9,14 @@ const Login = () => {
 
 
 
-  const { GoogleLogin, setIsLoadng, Login } = useAuth()
+  const { GoogleLogin, setIsLoadng, Login,user } = useAuth()
 
 
   const [logInData, setData] = useState({})
 
   const location = useLocation()
   const history = useNavigate()
-  const url = location.state?.from.pathname || "/"
+  const url = location.state?.from.pathname || "dashboard"
 
 
 
@@ -58,7 +58,7 @@ const Login = () => {
 
 
   }
-
+   
   return (
     <>
 

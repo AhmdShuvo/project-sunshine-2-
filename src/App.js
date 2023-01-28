@@ -19,6 +19,11 @@ import WhiteList from './Components/MyWhiteList/WhiteList';
 import Upload from './Components/Upload/Upload';
 import About from './Components/About/About';
 import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
+import TextEditor from './Components/posts/CreatePost/CreatePost';
+import Blog from './Components/posts/ViewPost/Blog';
+import BlogDetail from './Components/posts/ViewPost/BlogDetails/BlogDetail';
+
+
 
    
 
@@ -35,7 +40,9 @@ function App() {
     <Route path="about" element={<About/>} />
     <Route path="upload" element={<Upload/>} />
     <Route path="order/:email" element={<WhiteList />} />
-  
+    <Route path="blogs/:id" element={<BlogDetail />} />
+    <Route path="createpost" element={<TextEditor/>} />
+    <Route path="blogs" element={<Blog/>} />
     <Route path="places" element={<Places />} />
 
     <Route

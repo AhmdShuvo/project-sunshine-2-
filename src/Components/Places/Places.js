@@ -9,7 +9,7 @@ const Places = () => {
 
     useEffect(() => {
 
-        fetch("https://enigmatic-gorge-80884.herokuapp.com/places").then(res => res.json()).then(data => {
+        fetch("https://tourist-spot-server.vercel.app/places").then(res => res.json()).then(data => {
             setplaces(data)
         })
 

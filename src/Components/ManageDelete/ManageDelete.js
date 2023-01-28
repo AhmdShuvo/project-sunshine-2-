@@ -9,7 +9,7 @@ const ManageDelete = () => {
     const [services, setservices] = useState([])
 
     useEffect(() => {
-        fetch(`https://enigmatic-gorge-80884.herokuapp.com/orders`).then(res => res.json()).then(data => {
+        fetch(`https://tourist-spot-server.vercel.app/orders`).then(res => res.json()).then(data => {
 
             setservices(data)
         })
